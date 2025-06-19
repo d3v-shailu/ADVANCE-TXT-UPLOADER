@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: d3v-shaifu-app
+    env: python
+    build:
+      dockerfile: Dockerfile  # Uses your existing Dockerfile
+    command: python3 main.py  # Primary entry point
+    plan: free  # Upgrade to "starter" ($7/mo) for better reliability
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.9"  # Must match runtime.txt
+    healthCheckPath: /health  # Recommended: Add a health check route in main.py
+    autoDeploy: true  # Automatic Git-triggered deployments
