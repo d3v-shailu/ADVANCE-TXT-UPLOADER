@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: d3v-shaifu-app
+    name: d3v-shailu-app
     env: python
     build:
       dockerfile: Dockerfile  # Uses your existing Dockerfile
